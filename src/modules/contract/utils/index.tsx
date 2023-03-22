@@ -1,0 +1,37 @@
+export const fillContractGeneralInformation = (generalResponse: any) => ({
+  // ...generalResponse,
+  source: generalResponse.source,
+  contractNumber: generalResponse.code,
+  group: generalResponse.group?.id,
+  type: generalResponse.type?.id || '',
+  branchId: generalResponse.branch?.id,
+  startDate: generalResponse.startDate,
+  endDate: generalResponse.endDate,
+  signDate: generalResponse.signDate,
+  contactPerson: {
+    id: generalResponse.contactPerson?.id,
+    value: generalResponse.contactPerson?.id,
+    label: generalResponse.contactPerson?.name,
+  },
+  buyerId: {
+    id: generalResponse.buyer?.id,
+    value: generalResponse.buyer?.id,
+    label: generalResponse.buyer?.name,
+  },
+  sellerId: {
+    id: generalResponse.seller?.id,
+    value: generalResponse.seller?.id,
+    label: generalResponse.seller?.name,
+  },
+  selectContractGroup: {
+    id: generalResponse.selectContractGroup?.id,
+    value: generalResponse.selectContractGroup?.id,
+    label: generalResponse.selectContractGroup?.code,
+  },
+  value: generalResponse.value || '',
+  dueDatePayment: generalResponse.dueDatePayment || '',
+  projectAbbreviationName: generalResponse.projectAbbreviationName || '',
+  description: generalResponse?.description || '',
+  status: generalResponse.status?.id,
+  modifiedStatusDate: generalResponse.modifiedStatusDate || null,
+})
